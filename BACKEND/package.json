@@ -1,0 +1,15 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Bug Busters",
+  "license": "ISC",
+  "description": "Hack Puebla Syntax Track",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
