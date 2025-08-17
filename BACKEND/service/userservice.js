@@ -25,4 +25,20 @@ const createUser = async (email, password) => {
   return await usersCollection.insertOne(newUser);
 };
 
-export { createUser }
+const getUserActivity = async (email) => {
+  
+};
+
+const getUserAlerts = async (email) => {
+  const db = await connectToDatabase();
+  const devicesCollection = db.collection('devices_logs');
+
+  const existingUser = await devicesCollection.findOne({ email });
+  if (!existingUser) {
+    throw new Error('User doesnt exists');
+  }
+
+  return existingUser;
+}
+
+export { createUser, getUserActivity, getUserAlerts }
