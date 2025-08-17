@@ -1,10 +1,10 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import dotenv from 'dotenv';
-import * as fs from 'fs';
+import fs from 'fs';
+import path from "path";
 import { type } from "os";
 
 dotenv.config();
-
 // The client gets the API key from the environment variable `GEMINI_API_KEY`.
 const ai = new GoogleGenAI(process.env.GEMINI_API_KEY);
 
@@ -18,8 +18,9 @@ function fileToGenerativePart(path, mimeType) {
   };
 }
 
-async function runPrompt() {
-  const imagePart = fileToGenerativePart("C:/Users/fabia/Documents/Develop/HackPuebla/BACKEND/uploads/image-1755444490349-567674403.jpeg", "image/jpeg");
+async function runPrompt(filename) {
+  const pathimg = path.join(process.cwd(), '/uploads', filename);
+  const imagePart = fileToGenerativePart(pathimg, "image/jpeg");
 
   const response = await ai.models.generateContent({
     model: "gemini-2.5-flash",
@@ -47,6 +48,7 @@ async function runPrompt() {
   });
 
   console.log(response.text);
+  return response;
 }
 
 export { runPrompt };

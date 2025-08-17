@@ -25,4 +25,31 @@ const createUser = async (email, password) => {
   return await usersCollection.insertOne(newUser);
 };
 
-export { createUser }
+const getUserActivity = async (email) => {
+  
+};
+
+const getUserAlerts = async (email) => {
+  const db = await connectToDatabase();
+  const usersCollection = db.collection('users');
+
+  const existingUser = await usersCollection.findOne({ email });
+  if (!existingUser) {
+    throw new Error('User doesnt exists');
+  }
+
+  // Hash the password
+  const hashedPassword = await bcrypt.hash(password, 10);
+
+  // Create the user document
+  const newUser = {
+    email,
+    password: hashedPassword,
+    createdAt: new Date(),
+  };
+
+  // Use insertOne() to save the new user to the collection
+  return await usersCollection.insertOne(newUser);
+}
+
+export { createUser, getUserActivity, getUserAlerts }
