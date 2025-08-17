@@ -1,0 +1,7 @@
+customtkinter==5.2.2
+mss==10.1.0
+Pillow==11.3.0
+psutil==6.1.1
+psutil==7.0.0
+PyWinCtl==0.4.1
+Requests==2.32.4
