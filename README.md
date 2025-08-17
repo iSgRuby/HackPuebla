@@ -15,3 +15,4 @@ BACKEND: NodeJs
 ## Recursos
 - [DevPost Submit: info de evaluacion](https://hackpue.devpost.com/?ref_feature=challenge&ref_medium=discover&_gl=1*as3na5*_gcl_au*MjEwNTg4MzA4Ny4xNzU1Mzc3NDU4*_ga*MjM0MDc4ODY2LjE3NTUzNzc0NTk.*_ga_0YHJK3Y10M*czE3NTUzNzc0NTkkbzEkZzEkdDE3NTUzNzc0NjckajUyJGwwJGgw)
 - [Gemini AI Quickstart](https://ai.google.dev/gemini-api/docs/quickstart?hl=es-419)
+- [Mongo DB Documentation](https://www.mongodb.com/docs/drivers/node/current/)
