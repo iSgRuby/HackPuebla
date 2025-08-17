@@ -3,6 +3,7 @@ import pywinctl as pwc
 from PIL import Image
 from io import BytesIO
 import base64
+import psutil
 
 def take_screens_frame_base64():
     with mss.mss() as sct:
@@ -23,14 +24,14 @@ def get_window_info() -> dict:
     win = pwc.getActiveWindow()
     if not win:
         return None
-
+    
+    pid = win.getPID()
     window_info = {
         "window_title": win.title,
-        "pid": win.pid
     }
 
     try:
-        proc = psutil.Process(win.pid)
+        proc = psutil.Process(pid)
         window_info.update({
             "process_name": proc.name(),
             "executable_path": proc.exe(),
