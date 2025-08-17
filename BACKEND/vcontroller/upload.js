@@ -1,7 +1,7 @@
 import express from 'express';
 import multer from 'multer';
 import path from 'path';
-// import { callGeminiApi } from "./gemini.js"
+import { runPrompt } from "../service/gemini.js"
 
 const router = express.Router();
 
@@ -26,6 +26,8 @@ router.post('/upload-image', upload.single('image'), (req, res) => {
 
   // The uploaded file details are available in req.file
   const imageUrl = `/images/${req.file.filename}`;
+
+  runPrompt();
 
   res.status(201).json({ message: 'Image uploaded successfully', imageUrl: imageUrl });
 });
