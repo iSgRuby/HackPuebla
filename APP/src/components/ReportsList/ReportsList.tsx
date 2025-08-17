@@ -2,14 +2,27 @@ import './ReportsList.css'; // Import the stylesheet
 import { useState } from 'react';
 import { Card, CardContent, Button } from "@mui/material";
 import { Eye, EyeOff, ChevronDown, ChevronRight } from "lucide-react";
+import formatDatetime from '../../utils/formatDatetime';
 
 // Dummy data for the reports
-const reports = [
-    { id: 0, severity: "High Risk", title: "Suspicious Language Detected", content: "Hey, want to meet up sometime?", app: "Discord", timestamp: "Today at 2:15 PM", from: "Unknown User", type: "high-risk" },
-    { id: 1, severity: "Warning", title: "Inappropriate Content Accessed", content: "This website contains mature content", app: "Chrome Browser", timestamp: "Today at 1:45 PM", from: "Website: example.com", type: "warning" },
-];
 
-export default function ReportsList() {
+export interface Report {
+    id : number
+    title : string
+    timestamp : Date
+    app : string
+    content : string
+    type : string
+    severity : string
+    from? : string
+    icon? : string
+}
+
+interface ReportsListProps {
+    reports : Report[]
+}
+
+export default function ReportsList({ reports } : ReportsListProps) {
     const [expanded, setExpanded] = useState<Set<number>>(new Set());
     const [revealed, setRevealed] = useState<Set<number>>(new Set());
 
@@ -38,14 +51,14 @@ export default function ReportsList() {
                         <div className="report-header" onClick={() => toggleExpansion(report.id)}>
                             <div className="report-header__main">
                                 <span className={`report-badge report-badge--${report.type}`}>{report.severity}</span>
-                                <span className="report-icon">💬</span>
+                                <span className="report-icon">{report.icon ?? '💬'}</span>
                                 <div className="report-details">
                                     <p className="report-title">{report.title} <span className="report-from">- {report.from}</span></p>
-                                    <p className="report-content-preview">{report.content}</p>
+                                    {/* <p className="report-content-preview">{report.content}</p> */}
                                 </div>
                             </div>
                             <div className="report-header__meta">
-                                <span className="report-timestamp">{report.timestamp}</span>
+                                <span className="report-timestamp">{formatDatetime(report.timestamp)}</span>
                                 {expanded.has(report.id) ? <ChevronDown size={20} /> : <ChevronRight size={20} />}
                             </div>
                         </div>
@@ -66,7 +79,7 @@ export default function ReportsList() {
                                         <span>{report.content}</span>
                                     </div>
                                     <div className="app-info">
-                                        <span className="report-icon">💬</span>
+                                        <span className="report-icon">{report.icon ?? '💬'}</span>
                                         <span>{report.app}</span>
                                     </div>
                                     <div className="action-buttons">

@@ -1,0 +1,1 @@
+curl -X POST -F "image=@/Users/jdgvc/Downloads/Projects/HackPuebla/BACKEND/test-files/image-3.png" -F 'email=fab@gmail.com' localhost:3000/api/upload-image
