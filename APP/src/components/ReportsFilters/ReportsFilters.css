@@ -1,0 +1,35 @@
+/* ReportsFilters.css */
+
+.reports-filters {
+  display: flex;
+  gap: 0.5rem; /* 8px */
+}
+
+/* --- Base button styling for all filters --- */
+.filter-button {
+  padding: 6px 16px !important;
+  border-radius: 8px !important;
+  text-transform: none !important;
+  font-weight: 500 !important;
+  font-family: 'Roboto', sans-serif !important;
+  border: 1px solid #475569 !important; /* Default border */
+  transition: all 0.2s ease-in-out !important;
+}
+
+/* --- Inactive button state --- */
+.filter-button {
+  background-color: #f8fafc !important; /* White background */
+  color: #64748b !important; /* Gray text */
+}
+
+.filter-button:hover {
+  background-color: #e2e8f0 !important; /* Light gray on hover */
+  border-color: #64748b !important;
+}
+
+/* --- Active button state --- */
+.filter-button.active {
+  background-color: #4f46e5 !important; /* Blue background */
+  color: #ffffff !important; /* White text */
+  border-color: #4f46e5 !important; /* Blue border */
+}

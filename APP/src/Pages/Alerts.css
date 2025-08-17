@@ -1,0 +1,23 @@
+/* Alerts.css */
+
+.alerts-page {
+  background-color: #0f172a; /* Darker background from previous examples */
+  padding: 4rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* This selector targets every direct child of .alerts-page
+  that is NOT the first child, and adds a 2rem margin to the top.
+  This creates the separation between each component.
+*/
+.alerts-page > *:not(:first-child) {
+  margin-top: 2rem; /* 32px */
+}
+
+.page-title {
+  font-size: 1.875rem; /* 30px */
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0; /* Resets default h1 margin */
+  text-align: left;
+}

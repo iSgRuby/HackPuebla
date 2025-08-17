@@ -1,0 +1,60 @@
+/* ActivityStyles.css */
+
+/* --- General Container and Title --- */
+.recent-activity h3 {
+  font-size: 1.25rem; /* 20px */
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 1rem; /* 16px */
+}
+
+/* --- The Main Card --- */
+.activity-card {
+  background-color: #1e293b; /* Dark blue-gray background */
+  border-radius: 0.75rem; /* 12px */
+  padding: 0.5rem 0; /* 8px top/bottom, 0 left/right */
+  border: 1px solid #334155; /* Subtle border */
+}
+
+/* --- The List Itself --- */
+.activity-list > .activity-item:not(:last-child) {
+  border-bottom: 1px solid #334155; /* Divider line between items */
+}
+
+/* --- Each Row in the List --- */
+.activity-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem; /* 16px top/bottom, 24px left/right */
+}
+
+/* --- Left side container (icon + text) --- */
+.activity-item__main {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* 16px space between icon and text */
+}
+
+.activity-item__icon {
+  font-size: 1.5rem; /* 24px */
+}
+
+/* --- Text details (description and app) --- */
+.activity-item__description {
+  color: #f8fafc; /* Almost white */
+  font-weight: 500;
+  margin: 0;
+}
+
+.activity-item__app {
+  color: #94a3b8; /* Lighter gray for subtext */
+  font-size: 0.875rem; /* 14px */
+  margin: 0;
+}
+
+/* --- Time on the right side --- */
+.activity-item__time {
+  color: #64748b; /* Dim gray for the time */
+  font-size: 0.875rem; /* 14px */
+}

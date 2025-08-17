@@ -1,0 +1,45 @@
+/* Header.css */
+
+/* --- Main Header Bar --- */
+.app-header {
+  background-color: #1e293b; /* Dark blue-gray background */
+  padding: 1rem 1.5rem; /* 16px top/bottom, 24px left/right */
+  border-bottom: 1px solid #334155; /* Subtle border line */
+}
+
+/* --- Content Wrapper (for layout) --- */
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1280px; /* Optional: centers content on wide screens */
+  margin: 0 auto;
+}
+
+/* --- Logo and Title Group --- */
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* 12px space between icon and title */
+}
+
+/* Style the SVG icon from lucide-react */
+.header-logo svg {
+  color: #60a5fa; /* Light blue color for the icon */
+  width: 2rem; /* 32px */
+  height: 2rem; /* 32px */
+}
+
+/* Style the main title */
+.header-logo h1 {
+  color: #f8fafc; /* White text */
+  font-size: 1.5rem; /* 24px */
+  font-weight: 600;
+  margin: 0; /* Remove default h1 margin */
+}
+
+/* --- Tagline on the right --- */
+.header-tagline {
+  color: #94a3b8; /* Lighter gray for the tagline */
+  font-size: 0.875rem; /* 14px */
+}
