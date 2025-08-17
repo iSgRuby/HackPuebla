@@ -1,0 +1,81 @@
+/* TimeUsage.css */
+
+.time-usage-container h3 {
+  font-size: 1.25rem; /* 20px */
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 1rem; /* 16px */
+  font-family: 'Roboto', sans-serif;
+}
+
+/* --- Main Card Styling --- */
+.time-usage-card {
+  background-color: #1e293b !important;
+  border-radius: 12px !important;
+  border: 1px solid #334155;
+  color: #f8fafc !important;
+}
+
+.time-usage-card__header .MuiCardHeader-title {
+  font-size: 1.125rem !important; /* 18px */
+  font-weight: 600 !important;
+  font-family: 'Roboto', sans-serif !important;
+}
+
+.time-usage-card__content {
+  padding-top: 0 !important;
+}
+
+/* --- List Styling --- */
+.usage-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* 24px space between items */
+}
+
+/* --- Individual Item Styling --- */
+.usage-item__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem; /* 8px */
+  font-family: 'Roboto', sans-serif;
+}
+
+.usage-item__info span:first-child {
+  font-weight: 500;
+  color: #f8fafc;
+}
+
+.usage-item__info span:last-child {
+  font-size: 0.875rem; /* 14px */
+  color: #94a3b8;
+}
+
+/* --- Progress Bar Styling --- */
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #334155; /* The track color */
+  border-radius: 9999px;
+  overflow: hidden; /* Ensures the fill stays within the rounded corners */
+}
+
+.progress-bar__fill {
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 0.5s ease-out;
+}
+
+/* Color Variants */
+.progress-bar__fill--gaming {
+  background-color: #4f46e5; /* Blue */
+}
+
+.progress-bar__fill--social {
+  background-color: #9333ea; /* Purple */
+}
+
+.progress-bar__fill--education {
+  background-color: #22c55e; /* Green */
+}

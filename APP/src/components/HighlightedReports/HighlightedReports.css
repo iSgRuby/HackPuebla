@@ -1,0 +1,111 @@
+/* HighlightedReports.css */
+
+.urgent-alerts-container h3 {
+  font-size: 1.25rem; /* 20px */
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 1rem; /* 16px */
+  font-family: 'Roboto', sans-serif;
+}
+
+.alerts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem; /* 16px */
+}
+
+/* --- Base Card Styling --- */
+.alert-card {
+  border-radius: 12px !important;
+  background-color: #1e293b !important;
+  color: #f8fafc !important;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.alert-card:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.alert-card-content {
+  display: flex !important;
+  align-items: flex-start;
+  gap: 0.75rem; /* 12px */
+  padding: 1.25rem !important; /* 20px */
+}
+
+.alert-icon {
+  margin-top: 4px;
+}
+
+.alert-details {
+  flex: 1;
+}
+
+.alert-title, .alert-source {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.alert-title {
+  font-weight: 500;
+}
+
+.alert-source {
+  font-size: 0.875rem; /* 14px */
+  margin-top: 0.25rem; /* 4px */
+}
+
+/* --- Base Button Styling --- */
+.alert-button {
+  margin-top: 1rem !important; /* 16px */
+  padding: 4px 14px !important;
+  border-radius: 6px !important;
+  text-transform: none !important;
+  font-weight: 500 !important;
+  color: #ffffff !important;
+  transition: background-color 0.2s ease-in-out !important;
+}
+
+/* --- Card Variants --- */
+
+/* Suspicious (Red) Variant */
+.alert-card--suspicious {
+  border: 1px solid #ef4444;
+  background-color: rgba(153, 27, 27, 0.1) !important;
+}
+.alert-card--suspicious .alert-icon {
+  color: #f87171;
+}
+.alert-card--suspicious .alert-title {
+  color: #fecaca;
+}
+.alert-card--suspicious .alert-source {
+  color: #fca5a5;
+}
+.alert-card--suspicious .alert-button {
+  background-color: #dc2626 !important;
+}
+.alert-card--suspicious .alert-button:hover {
+  background-color: #b91c1c !important;
+}
+
+/* Inappropriate (Orange) Variant */
+.alert-card--inappropriate {
+  border: 1px solid #f97316;
+  background-color: rgba(194, 65, 12, 0.1) !important;
+}
+.alert-card--inappropriate .alert-icon {
+  color: #fb923c;
+}
+.alert-card--inappropriate .alert-title {
+  color: #fed7aa;
+}
+.alert-card--inappropriate .alert-source {
+  color: #fdba74;
+}
+.alert-card--inappropriate .alert-button {
+  background-color: #f97316 !important;
+}
+.alert-card--inappropriate .alert-button:hover {
+  background-color: #ea580c !important;
+}

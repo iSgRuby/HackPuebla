@@ -1,0 +1,17 @@
+/* Dashboard.css */
+
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* 32px - This creates the vertical space between each section */
+  font-family: 'Roboto', sans-serif;
+  padding: 4rem;
+}
+
+.dashboard-title {
+  font-size: 1.875rem; /* 30px */
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0; /* Remove default h2 margin */
+  /* background-color: pink; */
+}
