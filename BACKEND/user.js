@@ -9,16 +9,16 @@ router.get('/', (req, res) => {
 });
 
 router.post('/register', async (req, res) => {
-  const { username, email, password } = req.body;
-  if(!username | !email | !password) {
-    return res.status(400).json({ message: 'Username, email and password are required.' });
+  const { email, password } = req.body;
+  if(!email | !password) {
+    return res.status(400).json({ message: 'Email and password are required.' });
   }
 
   try {
     const db = await connectToDatabase();
     const usersCollection = db.collection('users');
 
-    const existingUser = await usersCollection.findOne({ username });
+    const existingUser = await usersCollection.findOne({ email });
     if (existingUser) {
       return res.status(400).json({ message: 'User already exists' });
     }
@@ -28,7 +28,7 @@ router.post('/register', async (req, res) => {
 
     // Create the user document
     const newUser = {
-      username,
+      email,
       password: hashedPassword,
       createdAt: new Date(),
     };
