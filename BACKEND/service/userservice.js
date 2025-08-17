@@ -31,25 +31,14 @@ const getUserActivity = async (email) => {
 
 const getUserAlerts = async (email) => {
   const db = await connectToDatabase();
-  const usersCollection = db.collection('users');
+  const devicesCollection = db.collection('devices_logs');
 
-  const existingUser = await usersCollection.findOne({ email });
+  const existingUser = await devicesCollection.findOne({ email });
   if (!existingUser) {
     throw new Error('User doesnt exists');
   }
 
-  // Hash the password
-  const hashedPassword = await bcrypt.hash(password, 10);
-
-  // Create the user document
-  const newUser = {
-    email,
-    password: hashedPassword,
-    createdAt: new Date(),
-  };
-
-  // Use insertOne() to save the new user to the collection
-  return await usersCollection.insertOne(newUser);
+  return existingUser;
 }
 
 export { createUser, getUserActivity, getUserAlerts }

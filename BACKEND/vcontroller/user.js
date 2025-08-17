@@ -38,16 +38,16 @@ router.get('/activity', async (req, res) => {
   }
 });
 
-router.get('/alerts', async (req, res) => {
-  const { email } = req.body;
+router.get('/:email/alerts', async (req, res) => {
+  const email = req.params.email;
   if(!email) {
     return res.status(400).json({ message: 'Email is required.' });
   }
 
   try {
     const result = await getUserAlerts(email);
-    
-    res.status(201).json({ message: 'Alerts retrieved successfully', userId: result.insertedId, });
+
+    res.status(201).json({ message: 'Alerts retrieved successfully', user_logs: result, });
   } catch(error) {
     res.status(500).json({ message: 'Server error.', error: error.message });
   }
