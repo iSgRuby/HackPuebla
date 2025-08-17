@@ -1,13 +1,15 @@
 import express from 'express';
-// const express = require('express');
 import { callGeminiApi } from "./gemini.js"
+import { run } from './device.js'
 
 const app = express();
 const port = 3000;
+app.use(express.json());
 
-app.get('/', (req, res) => {
+app.get('/hello', (req, res) => {
   res.send('Hello World!');
-  callGeminiApi();
+  // callGeminiApi();
+  run();
 });
 
 app.listen(port, () => {
