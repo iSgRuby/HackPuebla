@@ -1,6 +1,9 @@
 import express from 'express';
 import { callGeminiApi } from "./gemini.js"
-import { run } from './device.js'
+import { run } from './database.js'
+
+import userRoutes  from './user.js';
+import deviceRoutes from './device.js';
 
 const app = express();
 const port = 3000;
@@ -11,6 +14,9 @@ app.get('/hello', (req, res) => {
   // callGeminiApi();
   run();
 });
+
+app.use('/api/users', userRoutes);
+app.use('/api/devices', deviceRoutes);
 
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
